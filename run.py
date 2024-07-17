@@ -5,18 +5,18 @@ from random import randint
 # x represents missed 
 # ' ' represents available location
 
-HIDDEN_BOARD = [[''] * 5 for x in range(5)]
-GUESS_BOARD = [[''] * 5 for i in range(5)]
+HIDDEN_BOARD = [[' '] * 6 for x in range(6)]
+GUESS_BOARD = [[' '] * 6 for i in range(6)]
 
 ROWS = [0, 1, 2, 3, 4]
-COLUMNS = [0, 1, 2, 3, 4]
+COLUMNS = ['A', 'B', 'C', 'D', 'E', 'F' ]
 
 def start_game():
     pass
 
 def display_board(board):
-    print(" 01234")
-    print(" -----")
+    print("  A B C D E F")
+    print(" -------------")
     row_number = 0
     for row in board:
         print("%d|%s|" % (row_number, "|".join(row)))
