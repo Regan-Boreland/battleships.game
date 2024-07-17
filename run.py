@@ -3,7 +3,10 @@ from random import randint
 # Legend
 # @ represents ship locations
 # x represents missed 
-# - represents available location
+# ' ' represents available location
+
+row = [0, 1, 2, 3, 4]
+column = [0, 1, 2, 3, 4]
 
 def start_game():
     pass
