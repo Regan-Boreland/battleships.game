@@ -1,4 +1,7 @@
 # Legend
+# @ represents ship locations
+# x represents missed 
+# - represents available location
 
 def start_game():
     pass
