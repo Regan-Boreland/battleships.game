@@ -11,8 +11,9 @@ GUESS_BOARD = [[' '] * 6 for i in range(6)]
 ROWS = [0, 1, 2, 3, 4, 5]
 COLUMNS = [0, 1, 2, 3, 4, 5]
 
+#user lives at the start of the game
 USER_LIVES = 10
-MAXIMUM_POINTS = 5
+
 
 def display_board(board):
     """
@@ -40,6 +41,7 @@ def users_turn(input):
                 break
         except KeyError:
             print("Please enter a column on the board")
+    count_players_hits()
 
 def create_ships(board):
     """
@@ -59,7 +61,13 @@ def count_players_hits():
     """
     increases players points if a ship is hit and decreases the amount of lives per turn
     """
-    
+    points = 0
+    user_lives = 10
+    for row_guess in board:
+        for column_guess in row_guess:
+            if column_guess == '@':
+                points += 1
+    return points
 
 def start_game():
     """
@@ -71,7 +79,7 @@ def start_game():
     print("--------------------------------------------------")
     print("This is your board for todays game")
     display_board(GUESS_BOARD)
-    print("Lets sink their ships")
+    print("LETS SINK THEIR SHIPS!!!")
     create_ships(HIDDEN_BOARD)
     users_turn(input)
 
