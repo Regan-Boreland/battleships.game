@@ -11,10 +11,6 @@ GUESS_BOARD = [[' '] * 6 for i in range(6)]
 ROWS = [0, 1, 2, 3, 4, 5]
 COLUMNS = [0, 1, 2, 3, 4, 5]
 
-#user lives at the start of the game
-USER_LIVES = 10
-
-
 def display_board(board):
     """
     displays the board to the player
@@ -27,21 +23,22 @@ def display_board(board):
         row_number += 1
 
 def users_turn(input):
+    #validation for row guess
     while True:
         try:
             row_guess = int(input("Pick a row (between 0-5): "))
             if row_guess in ROWS:
                 break
-        except KeyError:
+        except ValueError:
             print("Please enter a row on the board")
+    #validation for column guess
     while True:
         try:
             column_guess = int(input("Pick a column (between 0-5): "))
             if column_guess in COLUMNS:
                 break
-        except KeyError:
+        except ValueError:
             print("Please enter a column on the board")
-    count_players_hits()
 
 def create_ships(board):
     """
@@ -51,18 +48,19 @@ def create_ships(board):
     for ship in range(5):
         ship_row = randint(0,5)
         ship_column = randint(0,5)
+        #uses randint to find a location on the board for a ship,
+        #if a location is already taken then run again till a location is found
         if board[ship_row] [ship_column] == '@':
             ship_row, ship_column = randint(0,5), randint(0,5)
         else:
             board[ship_row][ship_column] = '@'
 
-#increases the points counter if player hits the ship
 def count_players_hits():
     """
-    increases players points if a ship is hit and decreases the amount of lives per turn
+    increases players points if a ship is hit
     """
     points = 0
-    user_lives = 10
+    # searches the hidden board and if players guess aligns with ship location then increase points by one
     for row_guess in board:
         for column_guess in row_guess:
             if column_guess == '@':
