@@ -4,6 +4,7 @@ from random import randint
 # @ represents ship locations
 # x represents missed 
 # ' ' represents available location
+# # represents hit ship
 
 HIDDEN_BOARD = [[' '] * 6 for x in range(6)]
 GUESS_BOARD = [[' '] * 6 for i in range(6)]
@@ -79,6 +80,19 @@ def start_game():
     display_board(GUESS_BOARD)
     print("LETS SINK THEIR SHIPS!!!")
     create_ships(HIDDEN_BOARD)
-    users_turn(input)
+    turns = 10
+    while turns > 0:
+        users_turn(input)
+        if GUESS_BOARD[row_guess][column_guess] == 'X':
+            print("You've already used those coordinates, pick again")
+        elif HIDDEN_BOARD[row_guess][column_guess] == '@':
+            print("Good job commander, you sunk their ship")
+            GUESS_BOARD[row_guess][column_guess] = '#'
+            turns -= 1
+        else:
+            print("You missed! Focus and sink their ships")
+            GUESS_BOARD[row_guess][column_guess] = 'X'
+        
+
 
 start_game()
