@@ -92,7 +92,16 @@ def start_game():
         else:
             print("You missed! Focus and sink their ships")
             GUESS_BOARD[row_guess][column_guess] = 'X'
-        
+        if count_players_hits(GUESS_BOARD) == 4:
+            print("There's only one target left")
+            print("Hurry up and end this before we're out of ammunition")
+        if count_players_hits(GUESS_BOARD) == 5:
+            print("Congratulations you sunk all their ships")
+            print("GAME OVER!!!")
+            break
+        print(f"you have {turns} left")
+        if turns == 0:
+            print("Wer're out of ammunition\nWe'll get them next time")
 
 
 start_game()
