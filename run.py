@@ -12,6 +12,9 @@ GUESS_BOARD = [[' '] * 6 for i in range(6)]
 ROWS = [0, 1, 2, 3, 4, 5]
 COLUMNS = [0, 1, 2, 3, 4, 5]
 
+row = ""
+column = ""
+
 def display_board(board):
     """
     displays the board to the player
@@ -25,14 +28,16 @@ def display_board(board):
 
 def users_turn(input):
     #validation for row guess
+    global row_guess
     while True:
         try:
             row_guess = int(input("Pick a row (between 0-5): "))
             if row_guess in ROWS:
-                break
+                break 
         except ValueError:
             print("Please enter a row on the board")
     #validation for column guess
+    global column_guess
     while True:
         try:
             column_guess = int(input("Pick a column (between 0-5): "))
@@ -40,6 +45,7 @@ def users_turn(input):
                 break
         except ValueError:
             print("Please enter a column on the board")
+    
 
 def create_ships(board):
     """
@@ -56,7 +62,7 @@ def create_ships(board):
         else:
             board[ship_row][ship_column] = '@'
 
-def count_players_hits():
+def count_players_hits(board):
     """
     increases players points if a ship is hit
     """
@@ -80,7 +86,8 @@ def start_game():
     display_board(GUESS_BOARD)
     print("LETS SINK THEIR SHIPS!!!")
     create_ships(HIDDEN_BOARD)
-    turns = 10
+    display_board(HIDDEN_BOARD)
+    turns = 6
     while turns > 0:
         users_turn(input)
         #adds symbols to guess and hidden board based on user input
@@ -90,9 +97,12 @@ def start_game():
             print("Good job commander, you sunk their ship")
             GUESS_BOARD[row_guess][column_guess] = '#'
             turns -= 1
+            print(f"You have {turns} lives remaining")
         else:
             print("You missed! Focus and sink their ships")
             GUESS_BOARD[row_guess][column_guess] = 'X'
+            turns -=1
+            print(f"you have {turns} lives remaining")
         if count_players_hits(GUESS_BOARD) == 4:
             print("There's only one target left")
             print("Hurry up and end this before we're out of ammunition")
@@ -101,7 +111,6 @@ def start_game():
             print("Congratulations you sunk all their ships")
             print("GAME OVER!!!")
             break
-        print(f"you have {turns} left")
         if turns == 0:
             print("Wer're out of ammunition\nWe'll get them next time")
 
