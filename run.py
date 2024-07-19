@@ -83,6 +83,7 @@ def start_game():
     turns = 10
     while turns > 0:
         users_turn(input)
+        #adds symbols to guess and hidden board based on user input
         if GUESS_BOARD[row_guess][column_guess] == 'X':
             print("You've already used those coordinates, pick again")
         elif HIDDEN_BOARD[row_guess][column_guess] == '@':
@@ -95,6 +96,7 @@ def start_game():
         if count_players_hits(GUESS_BOARD) == 4:
             print("There's only one target left")
             print("Hurry up and end this before we're out of ammunition")
+        #ends the game when points reach 5 or turns reach 0
         if count_players_hits(GUESS_BOARD) == 5:
             print("Congratulations you sunk all their ships")
             print("GAME OVER!!!")
