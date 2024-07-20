@@ -65,6 +65,11 @@ Before writing any code for the project I decided to create a flow chart to outl
 - The endgame message is a short message indicating that the game has ended
 - The game can end by one of the conditions being met either lives reaching zero or points reaching five
 
+#### Congratulations message
+![Congratulations message](assets/readme/win_message.png)
+- The congratulations message is the condition in which the user wins the game
+- This message is displayed if the user sinks all five targets
+
 ## Technologies Used
 - Python
 - Github
