@@ -52,14 +52,14 @@ def create_ships(board):
     if the location already has a ship then the computer places a ship elsewhere
     """
     for ship in range(5):
-        ship_row = randint(0,5)
-        ship_column = randint(0,5)
+        target_row = randint(0,5)
+        target_column = randint(0,5)
         #uses randint to find a location on the board for a ship,
         #if a location is already taken then run again till a location is found
-        if board[ship_row] [ship_column] == '@':
-            ship_row, ship_column = randint(0,5), randint(0,5)
+        if board[target_row][target_column] == '@':
+            target_row, target_column = randint(0,5), randint(0,5)
         else:
-            board[ship_row][ship_column] = '@'
+            board[target_row][target_column] = '@'
 
 def start_game():
     """
