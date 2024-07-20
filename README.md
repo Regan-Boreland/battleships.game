@@ -5,6 +5,12 @@ Link to deployed game is available at - [battleships game](https://battleships-g
 ## Introduction
 Battle ships is a strategy guessing game, played on a grid that scores players based on how many targets they manage to guess the location of. Typically an online battleships game is played against either a computer or another player, but my version of battleships is played differen in which players are still given points depending on how many targets they hit but they are also given a set amount of lives. If they manage to hit all the targets within the set amount of lives they will win the game but if they don't, they will lose.
 ## Project
+#### The aim of this project is to:
+- produce a game that scores players on the targets they hit
+- displays messages based on user inputs
+- gives the player a set amount of lives and if they don't hit all the targets then ends the game
+- displays certain symbols depending on if the player has hit or missed a target
+- validates players inputs by cross referencing the inputs to the players grid
 ## Features
 ## Technologies Used
 ## Testing
