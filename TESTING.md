@@ -17,6 +17,7 @@ The Battleships game was tested on the following browsers
 - Safari
 
 ## Validator testing
+After using the [CI Python Linter](https://pep8ci.herokuapp.com/#) no issues were found
 
 ## Bugs
 | **Bug**   | **Solution**                    |

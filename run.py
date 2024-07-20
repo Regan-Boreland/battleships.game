@@ -78,7 +78,6 @@ def start_game():
     display_board(GUESS_BOARD)
     print("LETS SINK THEIR SHIPS!!!")
     create_ships(HIDDEN_BOARD)
-    display_board(HIDDEN_BOARD)
     turns = 10
     points = 0
     while turns > 0:
