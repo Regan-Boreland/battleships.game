@@ -58,3 +58,5 @@ Before writing any code for the project I decided to create a flow chart to outl
 Information regarding testing is available on - [Testing page](TESTING.md)
 ## Deployment
 ## Credits
+- Jubril Akolade
+- Knowledge Mavens - [display board function](https://www.youtube.com/watch?v=tF1WRCrd_HQ)
