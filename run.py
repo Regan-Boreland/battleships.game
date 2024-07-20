@@ -31,7 +31,7 @@ def users_turn(input):
     global row_guess
     while True:
         try:
-            row_guess = int(input("Pick a row (between 0-5):\n"))
+            row_guess = int(input("Pick a row (between 0-5): \n"))
             if row_guess in ROWS:
                 break 
         except ValueError:
@@ -40,7 +40,7 @@ def users_turn(input):
     global column_guess
     while True:
         try:
-            column_guess = int(input("Pick a column (between 0-5):\n"))
+            column_guess = int(input("Pick a column (between 0-5): \n"))
             if column_guess in COLUMNS:
                 break
         except ValueError:
