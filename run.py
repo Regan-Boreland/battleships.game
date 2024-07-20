@@ -73,12 +73,13 @@ def start_game():
     display_board(GUESS_BOARD)
     print("LETS SINK THEIR SHIPS!!!")
     create_ships(HIDDEN_BOARD)
+    display_board(HIDDEN_BOARD)
     turns = 10
     points = 0
     while turns > 0:
         users_turn(input)
         #adds symbols to guess and hidden board based on user input
-        if GUESS_BOARD[row_guess][column_guess] == 'X':
+        if GUESS_BOARD[row_guess][column_guess] == 'X' or GUESS_BOARD[row_guess][column_guess] == '#':
             print("You've already used those coordinates, pick again")
         elif HIDDEN_BOARD[row_guess][column_guess] == '@':
             print("Good job commander, you sunk their ship")
