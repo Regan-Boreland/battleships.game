@@ -62,17 +62,20 @@ def create_ships(board):
         else:
             board[ship_row][ship_column] = '@'
 
-def count_players_hits(board):
+points = 0
+
+def increment_points(board):
     """
     increases players points if a ship is hit
     """
-    points = 0
+    #global points
+    #points = 0
     # searches the hidden board and if players guess aligns with ship location then increase points by one
     for row_guess in board:
         for column_guess in row_guess:
             if column_guess == '@':
                 points += 1
-    return points
+    #return points
 
 def start_game():
     """
@@ -87,7 +90,8 @@ def start_game():
     print("LETS SINK THEIR SHIPS!!!")
     create_ships(HIDDEN_BOARD)
     display_board(HIDDEN_BOARD)
-    turns = 6
+    turns = 10
+    points = 0
     while turns > 0:
         users_turn(input)
         #adds symbols to guess and hidden board based on user input
@@ -103,16 +107,19 @@ def start_game():
             GUESS_BOARD[row_guess][column_guess] = 'X'
             turns -=1
             print(f"you have {turns} lives remaining")
-        if count_players_hits(GUESS_BOARD) == 4:
+        if GUESS_BOARD[row_guess][column_guess] == '#':
+            points += 1 
+            print(f"You have sunk {points} ships")
+        if points == 4:
             print("There's only one target left")
             print("Hurry up and end this before we're out of ammunition")
         #ends the game when points reach 5 or turns reach 0
-        if count_players_hits(GUESS_BOARD) == 5:
+        if points == 5:
             print("Congratulations you sunk all their ships")
             print("GAME OVER!!!")
             break
         if turns == 0:
             print("Wer're out of ammunition\nWe'll get them next time")
-
+        display_board(GUESS_BOARD)
 
 start_game()
