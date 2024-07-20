@@ -22,7 +22,39 @@ Battle ships is a strategy guessing game, played on a grid that scores players b
 Before writing any code for the project I decided to create a flow chart to outline the general direction of the game and the steps necessary.
 ![flowchat](assets/readme/flowchart.png)
 ## Features
+#### Welcome message 
+![Welcome message](assets/readme/Welcome_message.png)
+- The welcome message is a brief message explaining the game to the user
+- The welcome message also indicates the amount of lives the user has at the start of the game
+
+#### User input (Row)
+![User input for row](assets/readme/row_validation.png)
+- The user input for row allows users to make their guess for which row the target might be on
+- The row guess also comes with a valudation in which uses can't enter an empty space
+
+#### User input (Column)
+![User input for column](assets/readme/column_validation.png)
+- The user input for column also allows users to enter their guess for which column the target might be on
+- Column guess also comes with the same validation as row guess
+
+#### Board display
+![Board display](assets/readme/board_display.png)
+- The board display shows the players their board at the start of the game
+- The board display also shows users that the first row and column is assigned zero rather than one
+
+#### Symbols on board
+![Symbols showing on board](assets/readme/symbols_onboard.png)
+#### Lives counter
+#### Endgame message
+![Endgame message](assets/readme/endgame_message.png)
+- The endgame message is a short message indicating that the game has ended
+- The game can end by one of the conditions being met either lives reaching zero or points reaching five
 ## Technologies Used
+- Python
+- Github
+- Heroku
+- Gitpod
 ## Testing
+Information regarding testing is available on - [Testing page](TESTING.md)
 ## Deployment
 ## Credits
