@@ -51,7 +51,7 @@ Before writing any code for the project I decided to create a flow chart to outl
 - If the user hit a target the board will be displayed with '#' but if they missed the target then the board will be displayed with 'X'
 
 #### Lives counter
-![Lives counter](assets/readme/Lives_counter.png)
+![Lives counter](assets/readme/lives_counter.png)
 - The lives counter informs the user of how many lives they have remaining
 - The counter is displayed along with the symbols on board messages after the users guess
 

@@ -72,18 +72,23 @@ def start_game():
     """
     print("Welcome to Battleships, the ultimate guessing game")
     print("--------------------------------------------------")
-    print("Our game works a little different to a normal game,\nrather than playing against someone you will be given 10 lives,\nyou have to hit the 5 boats within the 10 lives\nor it's GAME OVER")
+    print("Our game works a little different to a normal game,")
+    print("rather than playing against someone you will be given 10 lives,")
+    print("you have to hit the 5 boats within the 10 lives")
+    print("or it's GAME OVER")
     print("--------------------------------------------------")
     print("This is your board for todays game")
     display_board(GUESS_BOARD)
     print("LETS SINK THEIR SHIPS!!!")
     create_ships(HIDDEN_BOARD)
-    turns = 10
+    display_board(HIDDEN_BOARD)
+    turns = 3
     points = 0
     while turns > 0:
         users_turn(input)
     # adds symbols to guess and hidden board based on user input
-        if GUESS_BOARD[row_guess][column_guess] == 'X' or GUESS_BOARD[row_guess][column_guess] == '#':
+        if (GUESS_BOARD[row_guess][column_guess] == 'X' or 
+        GUESS_BOARD[row_guess][column_guess] == '#'):
             print("You've already used those coordinates, pick again")
         elif HIDDEN_BOARD[row_guess][column_guess] == '@':
             print("Good job commander, you sunk their ship")
@@ -104,10 +109,12 @@ def start_game():
             print("Hurry up and end this before we're out of ammunition")
         # ends the game when points reach 5 or turns reach 0
         if points == 5:
+            print("-----------------------------------------")
             print("Congratulations you sunk all their ships")
             print("GAME OVER!!!")
             break
         if turns == 0:
+            print("-------------------------")
             print("Wer're out of ammunition\nWe'll get them next time")
         display_board(GUESS_BOARD)
 
