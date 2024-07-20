@@ -23,7 +23,7 @@ Before writing any code for the project I decided to create a flow chart to outl
 ![flowchat](assets/readme/flowchart.png)
 ## Features
 #### Welcome message 
-![Welcome message](assets/readme/Welcome_message.png)
+![Welcome message](assets/readme/welcome_message.png)
 - The welcome message is a brief message explaining the game to the user
 - The welcome message also indicates the amount of lives the user has at the start of the game
 
