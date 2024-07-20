@@ -62,21 +62,6 @@ def create_ships(board):
         else:
             board[ship_row][ship_column] = '@'
 
-points = 0
-
-def increment_points(board):
-    """
-    increases players points if a ship is hit
-    """
-    #global points
-    #points = 0
-    # searches the hidden board and if players guess aligns with ship location then increase points by one
-    for row_guess in board:
-        for column_guess in row_guess:
-            if column_guess == '@':
-                points += 1
-    #return points
-
 def start_game():
     """
     starts the game
@@ -107,6 +92,7 @@ def start_game():
             GUESS_BOARD[row_guess][column_guess] = 'X'
             turns -=1
             print(f"you have {turns} lives remaining")
+        #increases points if a location on hidden board and guess board align
         if GUESS_BOARD[row_guess][column_guess] == '#':
             points += 1 
             print(f"You have sunk {points} ships")
